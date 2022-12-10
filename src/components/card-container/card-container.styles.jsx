@@ -15,6 +15,8 @@ export const CardContainerStyle = styled.div`
   &:hover {
     transform: scale(1.05);
   }
+
+  
 `;
 
 export const PokemonDataContainer = styled.div`

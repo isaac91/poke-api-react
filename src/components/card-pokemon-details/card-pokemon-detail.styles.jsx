@@ -2,16 +2,48 @@ import styled from "styled-components";
 
 export const CardPokemonDetailContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 70vw;
-  border: 2px solid red;
-  border-radius: 50px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  align-items: center;
-  justify-content: center;
+  flex-flow: column;
+  padding: 1.2rem;
+  border: 5px solid white;
+  border-radius: 60px;
   background-color: ${({ backgroundColor }) => selectColor(backgroundColor)};
 
-  
+  @media min-width(1200px){
+    width: 85vw;
+  }
+`;
+
+export const CardGeneralInfo = styled.div`
+  padding: 1.5rem;
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .number {
+    text-align: right;
+  }
+  img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+  li {
+    font-size: 1.2rem;
+  }
+`;
+
+export const SpecificInfoContainer = styled.div`
+  padding: 1.5rem;
+  border-radius: 40px;
+  color: black;
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 `;
 
 const selectColor = (pokemonType) => {
