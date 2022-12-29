@@ -9,14 +9,14 @@ const CardContainer = ({ pokemon }) => {
   const { name: type } = pokemon.types[0].type;
 
   return (
-    <CardContainerStyle backgroundColor={type}>
+    <CardContainerStyle backgroundColor={type} key={type.slot}>
 
       <PokemonDataContainer backgroundColor={type}>
         <p>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
 
-        <ul>
+        <ul >
           {pokemon.types.map((type) => (
-            <li key={type.slot}>{type.type.name}</li>
+            <li >{type.type.name}</li>
           ))}
         </ul>
       </PokemonDataContainer>
