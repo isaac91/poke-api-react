@@ -1,16 +1,12 @@
 import styled from "styled-components";
 
 export const CardPokemonDetailContainer = styled.div`
-  display: flex;
-  flex-flow: column;
-  padding: 1.2rem;
+  display: grid;
+  justify-content: space-around;
+  padding: 2rem;
   border: 5px solid white;
   border-radius: 60px;
   background-color: ${({ backgroundColor }) => selectColor(backgroundColor)};
-
-  @media min-width(1200px){
-    width: 85vw;
-  }
 `;
 
 export const CardGeneralInfo = styled.div`
@@ -22,27 +18,37 @@ export const CardGeneralInfo = styled.div`
   .number {
     text-align: right;
   }
-  img {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-  }
+
   li {
     font-size: 1.2rem;
   }
 `;
 
+export const ImageContainer = styled.div`
+  text-align: center;
+  justify-content: space-around;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+`;
+
+export const EvolutionsContainer = styled.div`
+  text-align: center;
+  img {
+    max-width: 100%;
+    heigth: auto;
+  }
+`;
+
 export const SpecificInfoContainer = styled.div`
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 40px;
   color: black;
   background-color: ${({ backgroundColor }) => backgroundColor};
   img {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    max-width: 70%;
+    height: auto;
   }
 `;
 

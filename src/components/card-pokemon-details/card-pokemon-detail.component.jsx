@@ -2,10 +2,12 @@ import { StyledLink } from "../card-list/card-list.styles";
 import {
   CardGeneralInfo,
   CardPokemonDetailContainer,
+  ImageContainer,
   SpecificInfoContainer,
 } from "./card-pokemon-detail.styles";
 
 const CardPokemonDetail = ({ pokemon }) => {
+  console.log(pokemon);
   return (
     <CardPokemonDetailContainer
       key={pokemon.id}
@@ -21,11 +23,13 @@ const CardPokemonDetail = ({ pokemon }) => {
             <li key={type.slot}>{type.type.name}</li>
           ))}
         </ul>
-        <img
-          src={pokemon.sprites.other["official-artwork"].front_default}
-          alt={pokemon.name}
-          height="50%"
-        />
+        <ImageContainer>
+          <img
+            src={pokemon.sprites.other["official-artwork"].front_default}
+            alt={pokemon.name}
+            height="50%"
+          />
+        </ImageContainer>
       </CardGeneralInfo>
 
       <SpecificInfoContainer backgroundColor={"white"}>
@@ -52,14 +56,17 @@ const CardPokemonDetail = ({ pokemon }) => {
         <h3>Evolutions</h3>
         <ul>
           {pokemon.evolutions.map((evolution) => (
-            <>
-              <li key={evolution.species_name}>{evolution.species_name}</li>
+            <ImageContainer>
+              <h4 key={evolution.species_name}>
+                {evolution.species_name.charAt(0).toUpperCase() +
+                  evolution.species_name.slice(1)}
+              </h4>
               <img
                 src={evolution.sprite}
                 alt={pokemon.species_name}
                 height="50%"
               />
-            </>
+            </ImageContainer>
           ))}
         </ul>
       </SpecificInfoContainer>

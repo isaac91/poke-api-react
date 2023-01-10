@@ -72,8 +72,6 @@ const Pokemon = () => {
     getPokemonDetails();
   }, [id]);
 
-  console.log(pokemon);
-
   return (
     <PokemonContainer>
       {pokemon !== null && (

@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const CardContainerStyle = styled.div`
-  color: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  flex: wrap;
+  color: white;
   background-color: ${({ backgroundColor }) => selectColor(backgroundColor)};
   border: 2px solid white;
   border-radius: 20px;
-  padding: 25px;
+  padding: 20px;
   cursor: pointer;
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
@@ -15,21 +16,39 @@ export const CardContainerStyle = styled.div`
   &:hover {
     transform: scale(1.05);
   }
-
-  
+`;
+export const PokemonDataContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-export const PokemonDataContainer = styled.div`
-  p {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
+export const NumberContainerStyle = styled.span`
+  text-align: right;
+`;
+
+export const NameContainerStyle = styled.span`
+  font-weight: bold; 
+`;
+
+export const TypeContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const TypeNameStyle = styled.p`
+  text-align: center;
+  background-color: ${({ backgroundColor }) =>
+    selectColor(backgroundColor) + "6F"};
+  width: 100%;
+  margin: 5px 0px 5px 0px;
+  padding: 5px 15px 5px 15px;
+  border-radius: 20px;
 `;
 
 export const PokeImageContainer = styled.img`
-  align-items: center;
-  text-align: center;
-  max-height: 200px;
+  max-width: 50%;
+  height: auto;
 `;
 
 const selectColor = (pokemonType) => {

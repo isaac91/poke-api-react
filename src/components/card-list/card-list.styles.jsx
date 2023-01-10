@@ -4,23 +4,10 @@ import { Link } from "react-router-dom";
 export const CardListContainer = styled.div`
   
   display: grid;
-  align-items: center;
-  justify-content: center;
-
-  grid-gap: 50px;
-
-  @media (min-width: 500px) {
-    grid-template-columns: 1fr;
-  }
-
-  @media (min-width: 900px) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (min-width: 1200px) {
-    
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+  padding: 1rem;
+  gap: 3rem;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fill,minmax(min(100%,25rem), 1fr));
 `;
 
 export const StyledLink = styled(Link)`

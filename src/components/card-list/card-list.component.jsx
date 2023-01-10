@@ -6,7 +6,7 @@ const CardList = ({ filteredPokemons }) => {
     <CardListContainer>
       {filteredPokemons.map((pokemon) => (
         <StyledLink to={`pokemon/${pokemon.id}`}>
-          <CardContainer key={pokemon.id} pokemon={pokemon} />
+          <CardContainer  pokemon={pokemon}  key={pokemon.id}/>
         </StyledLink>
       ))}
     </CardListContainer>
